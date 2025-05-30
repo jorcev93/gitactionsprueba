@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-lastest #defino sobre que imagen va a correr nuestro workflow
     #definimos los pasos a seguir
     steps:
-      - uses: actions/checkout@v4
       - run: echo "Hacemos pull del código"
       - run: echo "Correr migraciones"
       - run: echo "Generar binario"
