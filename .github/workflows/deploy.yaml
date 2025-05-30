@@ -1,0 +1,21 @@
+name: "Deploy deploy-gitactions-prueba:" #Nombre del workflow
+
+# este es el trigger, se define con el "on", el "on", representa la accion sobre la cual va a actuar nuestro workflow
+on:
+  push: #este es el evento sobre el cual va a trabajar el trigger puede ser (push, merge, etc)
+    branches: ["master"] #esta es la rama sobre la cual va a actuar el trigger
+
+#los "jobs", por defecto se ejecutan de forma paralela, por eso hay que especificar
+#sobre que runner va a correr
+jobs:
+  #defino el nombre del job, puede ser cualquiera
+  deploy-gitactions-prueba:
+    runs-on: ubuntu-lastest #defino sobre que imagen va a correr nuestro workflow
+    #definimos los pasos
+    steps:
+      - run: echo "Hacemos pull del código"
+      - run: echo "Correr migraciones"
+      - run: echo "Generar binario"
+      - run: echo "Publicar versión"
+
+  
